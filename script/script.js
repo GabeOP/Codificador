@@ -8,11 +8,11 @@ function rot13() {
     let solved = ""
     for (let i = 0; i < texto.value.length; i++) {
         let asciiNum = texto.value[i].charCodeAt();
-        if (asciiNum >= 65 && asciiNum <= 77) {
+        if (asciiNum >= 65 && asciiNum <= 90 || asciiNum >= 97 && asciiNum <= 122) {
             solved += String.fromCharCode(asciiNum + parseInt(base.value))
-        } else if (asciiNum >= 78 && asciiNum <= 90) {
+        } else if (asciiNum > 90 || asciiNum > 122){
             solved += String.fromCharCode(asciiNum - parseInt(base.value))
-        }
+         }
     }
     resultado.innerHTML = `Texto codificado: ${solved}`
     console.log(solved)
