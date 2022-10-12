@@ -1,28 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <header>
+        <h1>Codificador</h1>
+    </header>
     <div class="wrapper">
         <div>
             <p>Digite o texto para ser codificado</p>
-            <input type="text" id="texto">
+            <input type="text" id="inputTexto">
         </div>
         <div>
             <p>Digite o valor da base</p>
-            <input type="number" id="numero">
+            <input type="number" maxlength="2" id="inputBase">
         </div>
         <input type="button" value="confirmar" id="btn">
 
         <div class="resultadoContainer">
             <p class="resultado"></p>
         </div>
+    </div>
+    <div class="cesarStoryWrapper">
+        <h2>Sobre Cifra de César</h2>
+        <p>
+            A Cifra de César é uma das mais simples e conhecidas técnicas de criptografia. É um tipo de cifra de substituição na qual cada letra do texto é substituída por outra tendo como 'quantidade de saltos' a chamada 'base'. Por exemplo: com uma base de <span>três</span>, a letra <span>'A'</span> se transforma na letra <span>'D'</span>. A letra <span>'B'</span>, na <span>'E'</span> e assim por diante.<br>
+        </p>
+        <div class="cesarStoryWrapper-img">
+            <img src="./img/CIFRAexemplo.png" alt="imagem exemplo do método de cripgrafia">
+        </div>
+        <p>
+            O nome do método é em homenagem a Júlio César, um líder militar e político romano, que o utilizava para se comunicar com os seus generais.
+        </p>
     </div>
     <script src="./script/script.js"></script>
 </body>

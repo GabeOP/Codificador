@@ -1,22 +1,29 @@
-let texto = document.getElementById("texto")
+let inputTexto = document.getElementById("inputTexto")
 let btn = document.getElementById('btn');
-let base = document.getElementById('numero');
-let resultado = document.querySelector('.resultado')
+let inputBase = document.getElementById('inputBase');
+let resultado = document.querySelector('.resultado');
 
-btn.addEventListener('click', rot13)
-function rot13() {
-    let solved = ""
-    for (let i = 0; i < texto.value.length; i++) {
-        let asciiNum = texto.value[i].charCodeAt();
-        if (asciiNum >= 65 && asciiNum <= 90 || asciiNum >= 97 && asciiNum <= 122) {
-            solved += String.fromCharCode(asciiNum + parseInt(base.value))
-        } else if (asciiNum > 90 || asciiNum > 122){
-            solved += String.fromCharCode(asciiNum - parseInt(base.value))
-         }
+
+
+btn.addEventListener('click', function(){
+    resultado.innerHTML = codifica(inputTexto.value, parseInt(inputBase.value))
+})
+
+
+function codifica(str, base){
+    let txtCodificado = "";
+    let codigo = 0;
+
+    for(let i = 0; i < str.length; i++){
+        let asciiNum = str[i].charCodeAt()
+        if(asciiNum >=65 && asciiNum <=90){
+          codigo = (((asciiNum - 65) + base) % 26) + 65
+        }
+        txtCodificado += String.fromCharCode(codigo) 
     }
-    resultado.innerHTML = `Texto codificado: ${solved}`
-    console.log(solved)
+    return txtCodificado
 }
+
 
 
 //------------CODIGO PARA DEBUG--------------

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200;400;500&display=swap');
+
+:root{
+    --dourado: gold;
+    --marmore: #F2EFE9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+}
+body{
+    background-color: var(--marmore);
+    background-image: url(../img/background.png);
+}
+span{
+    font-weight: 600;
+}
+.wrapper{
+    width: 100%;
+    height: 200px;
+    margin-top: 60px;
+    text-align: center;
+}
+.wrapper input{
+    height: 30px;
+    border: 1px solid var(--dourado);
+    border-radius: 5px;
+    padding: 5px
+}
+#inputBase{
+    width: 30px;
+    text-align: center;
+}
+.cesarStoryWrapper{
+    padding: 24px;
+    max-width: 630px;
+}
+.cesarStoryWrapper h2{
+    text-align: center;
+    font-weight: 600;
+}
+.cesarStoryWrapper-img{
+    margin: 20px auto;
+    width: 200px;
+}
