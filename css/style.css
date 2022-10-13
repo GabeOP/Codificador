@@ -3,6 +3,7 @@
 :root{
     --dourado: gold;
     --marmore: #F2EFE9;
+    --verde: rgb(0,128,0)
 }
 *{
     margin: 0;
@@ -18,7 +19,7 @@ body{
 span{
     font-weight: 600;
 }
-.wrapper{
+main{
     width: 100%;
     height: 200px;
     margin-top: 60px;
@@ -28,21 +29,38 @@ span{
     height: 30px;
     border: 1px solid var(--dourado);
     border-radius: 5px;
-    padding: 5px
+    padding: 5px;
+}
+.wrapper div{
+    margin-top: 12px;
 }
 #inputBase{
-    width: 30px;
+    width: 60px;
     text-align: center;
 }
-.cesarStoryWrapper{
+main section:nth-child(2){
+    padding-bottom: 10px
+}
+.cesarStoryWrapper, .base64StoryWrapper{
     padding: 24px;
     max-width: 630px;
+    border: 1px solid var(--dourado);
+    margin: 16px;
+    border-radius: 3px;
 }
-.cesarStoryWrapper h2{
+.cesarStoryWrapper h2, .base64StoryWrapper h2{
     text-align: center;
     font-weight: 600;
+}
+#baseContainer{
+    display: none;
 }
 .cesarStoryWrapper-img{
     margin: 20px auto;
     width: 200px;
+}
+.base64StoryWrapper img{
+    border: 1px solid var(--dourado);
+    margin-top: 12px;
+    width: 100%;
 }
