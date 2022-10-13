@@ -16,14 +16,18 @@ body{
     background-color: var(--marmore);
     background-image: url(../img/background.png);
 }
+h1{
+    text-align: center;
+}
 span{
     font-weight: 600;
 }
 main{
-    width: 100%;
-    height: 200px;
-    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    width: 100%;
 }
 .wrapper input{
     height: 30px;
@@ -38,16 +42,43 @@ main{
     width: 60px;
     text-align: center;
 }
-main section:nth-child(2){
-    padding-bottom: 10px
+.resultadoContainer{
+    display: flex;
+    justify-content: center;
 }
+.resultado{
+    background-color: white;
+    width: max-content;
+    padding-inline: 12px;
+    border: 1px solid var(--dourado);
+    font-size: 1.4rem;
+    border-radius: 3px
+}
+
+main section:nth-child(1){
+    margin-block: 80px;
+    font-size: 1.2rem;
+}
+main section:nth-child(1) div:nth-child(4) div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+main section:nth-child(2){
+    padding-bottom: 10px;
+}
+
+
 .cesarStoryWrapper, .base64StoryWrapper{
     padding: 24px;
     max-width: 630px;
     border: 1px solid var(--dourado);
     margin: 16px;
     border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
 }
+
 .cesarStoryWrapper h2, .base64StoryWrapper h2{
     text-align: center;
     font-weight: 600;
@@ -63,4 +94,21 @@ main section:nth-child(2){
     border: 1px solid var(--dourado);
     margin-top: 12px;
     width: 100%;
+}
+
+@media (min-width: 1160px){
+
+    .cesarStoryWrapper{
+        background-image: url(../img/julio-cesar.png);
+        background-position: left;
+        background-size:contain;
+        background-repeat: no-repeat;
+        padding-left: 60px
+    }
+    main section:nth-child(2){
+        display: flex;
+    }
+    main section:nth-child(2) div{
+        height: max-content;
+    }
 }

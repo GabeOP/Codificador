@@ -6,20 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./img/favicon-32x32.png" type="image/x-icon">
+    <title>CRIPTO</title>
 </head>
 
 <body>
 
     <header>
-        <h1>Codificador</h1>
+        <h1>Criptografar textos - Cifra de César ou Base64</h1>
     </header>
 
     <main>
         <section>
             <form class="wrapper">
                 <div>
-                    <label for="escolherDecodificacao">Selecione o tipo de decodificação</label>
+                    <label for="escolherDecodificacao">Selecione o tipo de decodificação:</label>
                     <select id="escolherDecodificacao">
                         <option value="1">Cifra de César</option>
                         <option selected value="2">Base64</option>
@@ -34,11 +35,21 @@
                     <input type="number" min="0" maxlength="2" id="inputBase">
                 </div>
                 <div>
-                    <input type="button" value="confirmar" id="btn">
+                    <div>
+                        <label for="radio1">Codificar</label>
+                        <input checked type="radio" name="teste" id="radio1">
+                    </div>
+                    <div>
+                        <label for="radio2">Descodificar</label>
+                        <input type="radio" name="teste" id="radio2">
+                    </div>
+                </div>
+                <div>
+                    <input type="button" value="Confirmar" id="btn">
                 </div>
     
                 <div class="resultadoContainer">
-                    <p class="resultado">Seu texto codificado aparecerá aqui</p>
+                    <p class="resultado">Resultado</p>
                 </div>
             </form>
         </section>

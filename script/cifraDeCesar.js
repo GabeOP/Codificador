@@ -6,7 +6,6 @@ let resultado = document.querySelector('.resultado');
 let baseContainer = document.getElementById('baseContainer');
 let escolherDecodificacao = document.getElementById('escolherDecodificacao');
 
-
 escolherDecodificacao.addEventListener('change', base);
 
 function base() {
@@ -18,10 +17,10 @@ function base() {
 }
 
 btn.addEventListener('click', function () {
-    resultado.innerHTML = codifica(inputTexto.value, parseInt(inputBase.value))
+    resultado.innerHTML = codificaCesar(inputTexto.value, parseInt(inputBase.value))
 })
 
-function codifica(str, base) {
+function codificaCesar(str, base) {
     let txtCodificado = "";
 
     for (let i = 0; i < str.length; i++) {
@@ -35,3 +34,18 @@ function codifica(str, base) {
     }
     return txtCodificado
 }
+
+// btn.addEventListener('click', teste)
+
+// function codificaBase64(txt){
+//     txt = texto.value
+//     resultado.innerHTML = btoa(txt)
+// }
+
+
+// decodificar.addEventListener('click', teste2)
+// function descodificaBase64(txt){
+//     txt = texto.value;
+//     resultado.innerHTML = atob(txt)
+// }
+
