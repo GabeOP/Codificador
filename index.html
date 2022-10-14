@@ -20,28 +20,28 @@
         <section>
             <form class="wrapper">
                 <div>
-                    <label for="escolherDecodificacao">Selecione o tipo de decodificação:</label>
+                    <label for="escolherDecodificacao">Selecione o tipo de criptografia:</label>
                     <select id="escolherDecodificacao">
-                        <option value="1">Cifra de César</option>
-                        <option selected value="2">Base64</option>
+                        <option class="testei" value="optCifra">Cifra de César</option>
+                        <option class="testei" selected value="optBase64">Base64</option>
                     </select>
                 </div>
                 <div>
-                    <label for="inputTexto">Texto para ser codificado:</label>
-                    <input type="text" id="inputTexto">
+                    <label id="inputTextoTitulo" for="inputTexto">Texto para ser codificado:</label>
+                    <textarea type="text" id="inputTexto"></textarea>
                 </div>
                 <div id="baseContainer">
                     <label for="inputBase">Digite a quantidade de saltos:</label>
                     <input type="number" min="0" maxlength="2" id="inputBase">
                 </div>
-                <div>
+                <div class="radioBtns">
                     <div>
                         <label for="radio1">Codificar</label>
-                        <input checked type="radio" name="teste" id="radio1">
+                        <input checked type="radio" value="radio1" name="teste" class="radioGeral" id="radio1">
                     </div>
                     <div>
-                        <label for="radio2">Descodificar</label>
-                        <input type="radio" name="teste" id="radio2">
+                        <label for="radio2">Decodificar</label>
+                        <input type="radio" name="teste" value="radio2" class="radioGeral" id="radio2">
                     </div>
                 </div>
                 <div>
@@ -49,7 +49,7 @@
                 </div>
     
                 <div class="resultadoContainer">
-                    <p class="resultado">Resultado</p>
+                    <textarea readonly class="resultado">Resultado</textarea>
                 </div>
             </form>
         </section>
@@ -88,7 +88,7 @@
         </section>
     </main>
 
-    <script src="./script/cifraDeCesar.js"></script>
+    <script src="./script/script.js"></script> 
 </body>
 
 </html>

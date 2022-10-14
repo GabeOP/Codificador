@@ -29,7 +29,7 @@ main{
     text-align: center;
     width: 100%;
 }
-.wrapper input{
+.wrapper input, textarea, select{
     height: 30px;
     border: 1px solid var(--dourado);
     border-radius: 5px;
@@ -37,22 +37,46 @@ main{
 }
 .wrapper div{
     margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#inputTexto{
+    width: 240px;
+    height: 45px;
+    max-width: 350px;
+    min-width: 259px;
+    max-height: 100px;
+    min-height: 30px;
+    padding-inline: 6px;
+    font-size: 1rem;
 }
 #inputBase{
     width: 60px;
     text-align: center;
 }
+.radioBtns div{
+    flex-direction: row;
+}
 .resultadoContainer{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 .resultado{
     background-color: white;
-    width: max-content;
+    width: 90vw;
+    height: 150px;
+    max-width: 90vw;
+    min-width: 60vw;
+    max-height: 50vh;
+    min-height: 20vh;
     padding-inline: 12px;
     border: 1px solid var(--dourado);
     font-size: 1.4rem;
-    border-radius: 3px
+    border-radius: 3px;
+    text-align: center;
 }
 
 main section:nth-child(1){
@@ -104,6 +128,11 @@ main section:nth-child(2){
         background-size:contain;
         background-repeat: no-repeat;
         padding-left: 60px
+    }
+    .resultado{
+        width: 500px;
+        min-width: 150px;
+        max-width: 50vw;;
     }
     main section:nth-child(2){
         display: flex;
