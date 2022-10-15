@@ -13,7 +13,7 @@
 <body>
 
     <header>
-        <h1>Criptografar textos - Cifra de César ou Base64</h1>
+        <h1>Conversão de textos para Cifra de César ou Base64</h1>
     </header>
 
     <main>
@@ -26,14 +26,6 @@
                         <option class="testei" selected value="optBase64">Base64</option>
                     </select>
                 </div>
-                <div>
-                    <label id="inputTextoTitulo" for="inputTexto">Texto para ser codificado:</label>
-                    <textarea type="text" id="inputTexto"></textarea>
-                </div>
-                <div id="baseContainer">
-                    <label for="inputBase">Digite a quantidade de saltos:</label>
-                    <input type="number" min="0" maxlength="2" id="inputBase">
-                </div>
                 <div class="radioBtns">
                     <div>
                         <label for="radio1">Codificar</label>
@@ -44,6 +36,16 @@
                         <input type="radio" name="teste" value="radio2" class="radioGeral" id="radio2">
                     </div>
                 </div>
+                <div>
+                    <label id="inputTextoTitulo" for="inputTexto">Texto para ser codificado:</label>
+                    <textarea type="text" id="inputTexto"></textarea>
+                </div>
+                
+                <div id="baseContainer">
+                    <label for="inputBase">Digite o valor de deslocamento:</label>
+                    <input type="number" min="0" maxlength="2" id="inputBase">
+                </div>
+                
                 <div>
                     <input type="button" value="Confirmar" id="btn">
                 </div>
@@ -59,16 +61,15 @@
                 <h2>Sobre Cifra de César</h2>
                 <p>
                     A Cifra de César é uma das mais simples e conhecidas técnicas de criptografia. É um tipo de cifra de
-                    substituição na qual cada letra do texto é substituída por outra tendo como base a 'quantidade de saltos'. 
-                    Por exemplo: Usando <span>três</span> como a quantidade de saltos, a letra <span>'A'</span> se transforma na letra
+                    substituição na qual cada letra do texto é substituída por outra tendo como base o valor de deslocamento. 
+                    Por exemplo: Usando <span>três</span> como o valor de deslocamento, a letra <span>'A'</span> se transforma na letra
                     <span>'D'</span>. A letra <span>'B'</span>, na <span>'E'</span> e assim por diante.<br>
                 </p>
                 <div class="cesarStoryWrapper-img">
                     <img src="./img/CIFRAexemplo.png" alt="imagem exemplo do método de cripgrafia">
                 </div>
                 <p>
-                    O nome do método é em homenagem a Júlio César, um líder militar e político romano, que o utilizava para
-                    se
+                    O nome do método é em homenagem a Júlio César, um líder militar e político romano, que o utilizava para se
                     comunicar com os seus generais.
                 </p>
             </div>

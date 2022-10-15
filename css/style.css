@@ -3,7 +3,6 @@
 :root{
     --dourado: gold;
     --marmore: #F2EFE9;
-    --verde: rgb(0,128,0)
 }
 *{
     margin: 0;
@@ -18,6 +17,7 @@ body{
 }
 h1{
     text-align: center;
+    font-weight: 600;
 }
 span{
     font-weight: 600;
@@ -30,10 +30,12 @@ main{
     width: 100%;
 }
 .wrapper input, textarea, select{
-    height: 30px;
+    height: 45px;
     border: 1px solid var(--dourado);
     border-radius: 5px;
     padding: 5px;
+    background-color: rgba(255, 255, 255, 0.774);
+    font-size: 1.3rem;
 }
 .wrapper div{
     margin-top: 12px;
@@ -41,20 +43,35 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-block: 12px;
 }
 #inputTexto{
     width: 240px;
-    height: 45px;
+    height: 55px;
     max-width: 350px;
     min-width: 259px;
     max-height: 100px;
-    min-height: 30px;
+    min-height: 55px;
     padding-inline: 6px;
-    font-size: 1rem;
 }
 #inputBase{
     width: 60px;
     text-align: center;
+}
+#btn{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: 1s
+}
+#btn:hover{
+    width: 220px;
+}
+.radioBtns{
+    flex-direction: row !important;
 }
 .radioBtns div{
     flex-direction: row;
@@ -81,9 +98,8 @@ main{
 
 main section:nth-child(1){
     margin-block: 80px;
-    font-size: 1.2rem;
 }
-main section:nth-child(1) div:nth-child(4) div{
+main section:nth-child(1) div:nth-child(2) div{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,7 +137,9 @@ main section:nth-child(2){
 }
 
 @media (min-width: 1160px){
-
+    h1{
+        font-size: 3.5rem;
+    }
     .cesarStoryWrapper{
         background-image: url(../img/julio-cesar.png);
         background-position: left;
