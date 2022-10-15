@@ -45,9 +45,9 @@ escolherDecodificacao.addEventListener('change', function(){
 // ---CADA UMA DAS VALIDAÇÕES NECESSÁRIAS PARA A CRIPTOGRAFIA CORRETA SER FEITA---
 btn.addEventListener('click', function () {
     if (inputTexto.value === "") {
-        alert("Não há texto para ser codificado. Tente novamente.")
+        alert("Campo de texto vazio. Tente novamente.")
     } else if (inputBase.value === "" && escolherDecodificacao.value == "optCifra") {
-        alert("Escolha a quantidade de saltos para a decodificação")
+        alert("Escolha o valor de deslocamento")
     } else if (radiobtn1.checked && escolherDecodificacao.value == "optCifra") {
         resultado.innerText = codificaCesar(inputTexto.value, parseInt(inputBase.value))
     } else if (radiobtn1.checked && escolherDecodificacao.value == "optBase64") {
@@ -72,7 +72,7 @@ function codificaCesar(str, base) {
             codigo = (((asciiNum - 65) + base) % 26) + 65
         } else if (asciiNum >= 97 && asciiNum <= 122) {
             codigo = (((asciiNum - 97) + base) % 26) + 97
-        } else if(asciiNum >= 32 && asciiNum <= 47 || asciiNum >= 58 && asciiNum <= 64 || asciiNum >= 91 && asciiNum <= 96 || asciiNum >= 123 && asciiNum <= 126){
+        } else if(asciiNum >= 32 && asciiNum <= 47 || asciiNum >= 58 && asciiNum <= 64 || asciiNum >= 91 && asciiNum <= 96 || asciiNum >= 123 && asciiNum <= 126 || asciiNum >= 48 && asciiNum <= 57){
             codigo = asciiNum;
         }
         txtCodificado += String.fromCharCode(codigo);
