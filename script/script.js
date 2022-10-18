@@ -15,12 +15,10 @@ let titulo = document.getElementById('inputTextoTitulo');
 radiobtn1.addEventListener('click', function(){
     titulo.innerHTML = 'Texto para ser codificado:'
     inputTexto.value = ""
-    inputBase.value = ""
 })
 radiobtn2.addEventListener('click', function(){
     titulo.innerHTML = 'Texto para ser decodificado:'
     inputTexto.value = ""
-    inputBase.value = ""
 })
 // ---------------------------------------------------------
 
@@ -78,6 +76,23 @@ function codificaCesar(str, base) {
         txtCodificado += String.fromCharCode(codigo);
     }
     return txtCodificado
+}
+
+function decodificaCesar(str, base) {
+    let txtDecodificado = " ";
+    for (let i = 0; i < str.length; i++) {
+        let asciiNum = str[i].charCodeAt()
+        if (asciiNum >= 65 && asciiNum <= 90) {
+            codigo = (((asciiNum + 65) - base) % 26) + 65
+        } else if (asciiNum >= 97 && asciiNum <= 122) {
+            codigo = (((asciiNum + 97) - base) % 26) + 97
+        } else if (asciiNum >= 32 && asciiNum <= 47 || asciiNum >= 58 && asciiNum <= 64 || asciiNum >= 91 && asciiNum <= 96 || asciiNum >= 123 && asciiNum <= 126 || asciiNum >= 48 && asciiNum <= 57) {
+            codigo = asciiNum;
+        }
+
+        txtDecodificado += String.fromCharCode(codigo)
+    }
+    return txtDecodificado
 }
 // ---------------------------------------------------------
 
