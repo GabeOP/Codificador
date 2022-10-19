@@ -3,6 +3,7 @@ let inputTexto = document.getElementById("inputTexto")
 let btn = document.getElementById('btn');
 let inputBase = document.getElementById('inputBase');
 let resultado = document.querySelector('.resultado');
+let filtro = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
 // -----------------------
 
 
@@ -72,6 +73,8 @@ function codificaCesar(str, base) {
             codigo = (((asciiNum - 97) + base) % 26) + 97
         } else if(asciiNum >= 32 && asciiNum <= 47 || asciiNum >= 58 && asciiNum <= 64 || asciiNum >= 91 && asciiNum <= 96 || asciiNum >= 123 && asciiNum <= 126 || asciiNum >= 48 && asciiNum <= 57){
             codigo = asciiNum;
+        }else if( asciiNum !== filtro){
+            codigo = asciiNum
         }
         txtCodificado += String.fromCharCode(codigo);
     }
@@ -85,11 +88,16 @@ function decodificaCesar(str, base) {
         if (asciiNum >= 65 && asciiNum <= 90) {
             codigo = (((asciiNum + 65) - base) % 26) + 65
         } else if (asciiNum >= 97 && asciiNum <= 122) {
-            codigo = (((asciiNum + 97) - base) % 26) + 97
-        } else if (asciiNum >= 32 && asciiNum <= 47 || asciiNum >= 58 && asciiNum <= 64 || asciiNum >= 91 && asciiNum <= 96 || asciiNum >= 123 && asciiNum <= 126 || asciiNum >= 48 && asciiNum <= 57) {
+           if((asciiNum - 97) - base < 0){
+            codigo = (((asciiNum - 97) - base + 26) % 26) + 97
+           }else{
+            codigo = (((asciiNum - 97) - base) % 26) + 97
+           }
+        }else if (asciiNum >= 32 && asciiNum <= 47 || asciiNum >= 58 && asciiNum <= 64 || asciiNum >= 91 && asciiNum <= 96 || asciiNum >= 123 && asciiNum <= 126 || asciiNum >= 48 && asciiNum <= 57) {
             codigo = asciiNum;
+        }else if( asciiNum !== filtro){
+            codigo = asciiNum
         }
-
         txtDecodificado += String.fromCharCode(codigo)
     }
     return txtDecodificado
